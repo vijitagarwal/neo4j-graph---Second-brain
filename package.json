@@ -1,0 +1,32 @@
+{
+  "name": "neo4js-second-brain",
+  "version": "1.0.0",
+  "description": "Markdown to Neo4j knowledge graph pipeline using Groq and Neo4j",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "backend": "node index.js",
+    "dev": "npx concurrently -k \"npm run backend\" \"npm --prefix web run dev\"",
+    "web:dev": "npm --prefix web run dev",
+    "web:build": "npm --prefix web run build",
+    "web:start": "npm --prefix web run start",
+    "docker:up": "docker compose up -d",
+    "docker:down": "docker compose down"
+  },
+  "keywords": [
+    "neo4j",
+    "knowledge-graph",
+    "markdown",
+    "groq"
+  ],
+  "license": "MIT",
+  "dependencies": {
+    "dotenv": "^16.4.5",
+    "groq-sdk": "^0.12.0",
+    "neo4j-driver": "^5.25.0"
+  },
+  "devDependencies": {
+    "concurrently": "^9.1.2"
+  }
+}

@@ -1,0 +1,1 @@
+Update the Neo4j Knowledge Graph project to add vector embeddings for each node using the HuggingFace or OpenAI embeddings API. Store vector indexes inside Neo4j so we can perform hybrid graph and vector search queries.
