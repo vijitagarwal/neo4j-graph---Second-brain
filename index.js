@@ -139,9 +139,10 @@ async function callGroqWithRetry(client, model, messages, maxAttempts = 4) {
       const response = await client.chat.completions.create({
         model,
         temperature: 0,
+        max_tokens: 4096,
+        response_format: { type: 'json_object' },
         messages,
       });
-
       return response;
     } catch (error) {
       const status = error?.status || error?.statusCode;
@@ -185,8 +186,9 @@ Rules:
 
   const response = await callGroqWithRetry(client, model, [
     { role: 'system', content: systemPrompt },
-    { role: 'user', content: markdownText.slice(0, 12000) },
+    { role: 'user', content: markdownText.slice(0, 8000) },
   ]);
+
 
   const content = response?.choices?.[0]?.message?.content;
   return normalizeJsonResponse(content);

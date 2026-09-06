@@ -7,7 +7,7 @@
   "scripts": {
     "start": "node index.js",
     "backend": "node index.js",
-    "dev": "npx concurrently -k \"npm run backend\" \"npm --prefix web run dev\"",
+    "dev": "npx concurrently \"npm run backend\" \"npm --prefix web run dev\"",
     "web:dev": "npm --prefix web run dev",
     "web:build": "npm --prefix web run build",
     "web:start": "npm --prefix web run start",
